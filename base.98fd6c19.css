@@ -322,7 +322,7 @@ a:focus {
 }
 
 .js .menu__item-textinner {
-  transform: translateY(100%);
+  /*transform: translateY(100%);*/
 }
 
 .menu__item:hover .menu__item-textinner {
@@ -878,6 +878,8 @@ footer p.email {
   pointer-events: none;
   opacity: .3;
   animation: noise 1.2s steps(3) infinite both;
+
+  display: none;
 }
 
 @media (max-width: 1200px) {

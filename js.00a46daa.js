@@ -9363,6 +9363,42 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
+var ITEManimate = {
+  start: 0,
+  bezier: function bezier(p0, p1, p2, p3) {
+    return ITEManimate.polyBez([p0, p1], [p2, p3]);
+  },
+  polyBez: function polyBez(p1, p2) {
+    var A = [null, null],
+        B = [null, null],
+        C = [null, null],
+        bezCoOrd = function bezCoOrd(t, ax) {
+      C[ax] = 3 * p1[ax], B[ax] = 3 * (p2[ax] - p1[ax]) - C[ax], A[ax] = 1 - C[ax] - B[ax];
+      return t * (C[ax] + t * (B[ax] + t * A[ax]));
+    },
+        xDeriv = function xDeriv(t) {
+      return C[0] + t * (2 * B[0] + 3 * A[0] * t);
+    },
+        xForT = function xForT(t) {
+      var x = t,
+          i = 0,
+          z;
+
+      while (++i < 14) {
+        z = bezCoOrd(x, 0) - t;
+        if (Math.abs(z) < 1e-3) break;
+        x -= z / xDeriv(x);
+      }
+
+      return x;
+    };
+
+    return function (t) {
+      return bezCoOrd(xForT(t), 1);
+    };
+  }
+};
+
 var Menu = /*#__PURE__*/function () {
   function Menu(el) {
     var _this = this;
@@ -9375,9 +9411,9 @@ var Menu = /*#__PURE__*/function () {
     }; // the menu item elements (<a>)
 
     this.DOM.menuItems = this.DOM.el.querySelectorAll('.menu__item'); // menu item properties that will animate as we move the mouse around the menu
-    // we will be using interpolation to achieve smooth animations. 
-    // the “previous” and “current” values are the values to interpolate. 
-    // the value applied to the element, this case the image element (this.DOM.reveal) will be a value between these two values at a specific increment. 
+    // we will be using interpolation to achieve smooth animations.
+    // the “previous” and “current” values are the values to interpolate.
+    // the value applied to the element, this case the image element (this.DOM.reveal) will be a value between these two values at a specific increment.
     // the amt is the amount to interpolate.
 
     this.animatableProperties = {
@@ -9420,20 +9456,12 @@ var Menu = /*#__PURE__*/function () {
 
   _createClass(Menu, [{
     key: "showMenuItems",
-    value: function showMenuItems() {
-      _gsap.gsap.to(this.menuItems.map(function (item) {
-        return item.DOM.textInner;
-      }), {
-        duration: 1.2,
-        ease: 'Expo.easeInOut',
-        startAt: {
-          y: '100%'
-        },
-        y: 0,
-        delay: function delay(pos) {
-          return pos * 0.06;
-        }
-      });
+    value: function showMenuItems() {// gsap.to(this.menuItems.map(item => item.DOM.textInner), {
+      //     duration: .5,
+      //     startAt: {y: '100%'},
+      //     y: 0,
+      //     delay: pos => pos*0
+      // });
     }
   }]);
 
