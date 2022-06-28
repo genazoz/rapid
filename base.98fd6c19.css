@@ -217,7 +217,6 @@ a:focus {
   display: flex;
   align-items: center;
   line-height: 1;
-  font-weight: bold;
   transition: height 0.1s;
 }
 
@@ -253,7 +252,6 @@ a:focus {
 	padding: 0 10px;
 
 	font-family: SharpGrotesk;
-	font-weight: 700;
 	white-space: nowrap;
 	font-size: 200px;
     color: transparent;
