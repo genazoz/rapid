@@ -225,7 +225,7 @@ a:focus {
 }
 @media (max-width: 1200px) {
   .menu__item::before{
-    top: -20px;
+    top: 65px;
     transition: height .6s cubic-bezier(0.85, 0.01, 0.2, 0.99);
   }
   .menu__item:hover::before {
@@ -302,6 +302,7 @@ a:focus {
 @media (max-width: 1200px) {
   .menu__item-text {
     width: 100%;
+    transform: rotate(350deg);
   }
   .menu__item-textinner {
     width: 100%;
@@ -357,6 +358,12 @@ a:focus {
   transform: translateX(-1rem);
   transition: transform 0.3s, opacity 0.3s;
 }
+@media (max-width: 1200px) {
+  .menu__item-sub {
+    display: none;
+  }
+}
+
 
 .menu__item:hover .menu__item-sub {
   opacity: 1;
