@@ -294,7 +294,7 @@ a:focus {
     height: 100%;
 
     text-align: center;
-    -webkit-text-stroke: 1.5px #0a0a0a;
+    -webkit-text-stroke: 1.5px #0b0b0b;
     -webkit-text-fill-color: transparent;
 
     transition: .15s top ease;
