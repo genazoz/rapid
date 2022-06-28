@@ -180,7 +180,7 @@ a:focus {
 @media (max-width: 1200px) {
   .menu {
     width: 100%;
-    padding: 20px 0;
+    padding: 25px 0;
   }
 }
 
@@ -319,8 +319,8 @@ a:focus {
     width: 100%;
     margin: auto;
 
-    font-size: 155px;
-    line-height: 175px;
+    font-size: 160px;
+    line-height: 180px;
   }
 }
 .menu__item:hover .menu__item-textinner::after{
