@@ -309,6 +309,7 @@ a:focus {
 
     font-size: 170px;
     line-height: 190px;
+    letter-spacing: 3px;
   }
   .menu__item-textinner::after, .menu__item-textinner::before {
     transition: top .6s cubic-bezier(0.85, 0.01, 0.2, 0.99);
