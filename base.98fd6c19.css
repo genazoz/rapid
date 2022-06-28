@@ -197,6 +197,8 @@ a:focus {
 
 @media (max-width: 1200px) {
   .menu__item {
+    z-index: unset !important;
+
     justify-content: center;
     padding: 0;
   }
