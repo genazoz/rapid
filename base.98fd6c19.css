@@ -557,6 +557,8 @@ html.has-scroll-dragging {
   }
 
   .footer svg {
+    width: 20px;
+    height: 20px;
     fill: rgb(17, 17, 17);
   }
 }
