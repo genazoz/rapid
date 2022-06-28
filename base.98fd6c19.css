@@ -319,8 +319,8 @@ a:focus {
     width: 100%;
     margin: auto;
 
-    font-size: 145px;
-    line-height: 165px;
+    font-size: 155px;
+    line-height: 175px;
   }
 }
 .menu__item:hover .menu__item-textinner::after{
