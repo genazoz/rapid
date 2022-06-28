@@ -226,7 +226,7 @@ a:focus {
 }
 @media (max-width: 1200px) {
   .menu__item::before{
-    top: -15px;
+    top: -20px;
     transition: height .6s cubic-bezier(0.85, 0.01, 0.2, 0.99);
   }
   .menu__item:hover::before {
