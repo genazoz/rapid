@@ -225,7 +225,7 @@ a:focus {
 }
 @media (max-width: 1200px) {
   .menu__item::before{
-    top: 65px;
+    top: -20px;
     transition: height .6s cubic-bezier(0.85, 0.01, 0.2, 0.99);
   }
   .menu__item:hover::before {
@@ -302,7 +302,6 @@ a:focus {
 @media (max-width: 1200px) {
   .menu__item-text {
     width: 100%;
-    transform: rotate(350deg);
   }
   .menu__item-textinner {
     width: 100%;
