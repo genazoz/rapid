@@ -254,11 +254,10 @@ a:focus {
 	font-weight: 700;
 	white-space: nowrap;
 	font-size: 200px;
+    color: transparent;
 	text-transform: uppercase;
 	line-height: 175px;
 	letter-spacing: 6px;
-	-webkit-text-stroke: 1px transparent;
-	-webkit-text-fill-color: transparent;
 	transition: 0s all;
 }
 .menu__item-textinner::after{
