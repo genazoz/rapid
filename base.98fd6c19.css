@@ -66,7 +66,7 @@ body.light-mode .div-block-44 {
 body.light-mode .lights__ball {
   opacity: 0;
 }
-body:not(.light-mode) .lights__ball {  
+body:not(.light-mode) .lights__ball {
   transition: .9s opacity;
   transition-delay: .1s;
   opacity: 1;
@@ -179,7 +179,7 @@ a:focus {
 @media (max-width: 1200px) {
   .menu {
     width: 100%;
-    padding-top: 30px;
+    padding: 30px 0 20px 0;
   }
 }
 
@@ -202,31 +202,33 @@ a:focus {
 }
 
 .menu__item::before {
-	counter-increment: '';
-  /* counter-increment: menucounter; */
-  /* content: counters(menucounter, ".", decimal-leading-zero); */
-  content: "";
   position: absolute;
+
+  content: "";
   left: 0;
   top: 0;
   bottom: 0;
   margin: auto;
   border-left: 4px solid #f40;
-  height: 40%;
+  height: 0%;
   display: flex;
   align-items: center;
   line-height: 1;
   font-weight: bold;
-  opacity: 0;
-  transform: translateX(-1rem);
-  transition: transform 0.1s, opacity 0.1s;
+  transition: height 0.1s;
 }
 
 .menu__item:hover::before {
-  opacity: 1;
-  transform: translateX(0);
+  height: 40%;
 }
-
+@media (max-width: 1200px) {
+  .menu__item::before{
+    transition: height .5s cubic-bezier(0.85, 0.01, 0.2, 0.99);
+  }
+  .menu__item:hover::before {
+    height: 64%;
+  }
+}
 .menu__item-text {
   position: relative;
 
@@ -238,7 +240,6 @@ a:focus {
 
   cursor: pointer;
 }
-
 .menu__item-textinner {
 	position: relative;
 
@@ -259,37 +260,24 @@ a:focus {
 
 	transition: .15s all;
 }
-@media (max-width: 1200px) {
-  .menu__item-text {
-    width: 100%;
-  }
-  .menu__item-textinner {
-    width: 100%;
-    margin: auto;
-
-    font-size: 155px;
-    line-height: 180px;
-  }
-}
-
 .menu__item-textinner::after{
 	content: attr(data-text);
 
 	position: absolute;
 	top: 0;
 	left: 0;
-	
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
 	width: 100%;
 	height: 0;
-	
+
 	text-align: center;
 	-webkit-text-fill-color: #f40;
 
-	transition: .15s all ease;
+    transition: .15s all ease;
   }
 .menu__item-textinner::before{
     content: attr(data-text);
@@ -311,6 +299,21 @@ a:focus {
 
     transition: .15s all ease;
   }
+@media (max-width: 1200px) {
+  .menu__item-text {
+    width: 100%;
+  }
+  .menu__item-textinner {
+    width: 100%;
+    margin: auto;
+
+    font-size: 155px;
+    line-height: 180px;
+  }
+  .menu__item-textinner::after, .menu__item-textinner::before {
+    transition: all .4s cubic-bezier(0.85, 0.01, 0.2, 0.99);
+  }
+}
 .menu__item:hover .menu__item-textinner::after{
   height: 100%;
 }
@@ -324,7 +327,7 @@ a:focus {
 
 .menu__item:hover .menu__item-textinner {
   /* color: var(--color-menu-hover);*/
-  -webkit-text-stroke: transparent; 
+  -webkit-text-stroke: transparent;
 
   transition: .3s all;
 }
@@ -552,6 +555,10 @@ html.has-scroll-dragging {
     list-style: none;
     margin: 0 10px;
   }
+
+  .footer svg {
+    fill: rgb(17, 17, 17);
+  }
 }
 footer a {
   color: #292929;
@@ -559,10 +566,10 @@ footer a {
   position: relative;
   transition: all 0.3s ease;
 }
+footer p.email {
+  display: none;
+}
 @media only screen and (min-width: 1000px) {
-  footer p.email {
-    display: none;
-  }
   footer p.email a {
     font-size: 24px;
     line-height: 32px;
@@ -614,7 +621,7 @@ footer a {
     left: 0;
     right: 0;
 
-    margin: 50px auto auto;
+    margin: 30px auto auto;
   }
 }
 
