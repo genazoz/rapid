@@ -264,11 +264,11 @@ a:focus {
     width: 100%;
   }
   .menu__item-textinner {
-    width: 80%;
+    width: 100%;
     margin: auto;
 
-    font-size: 140px;
-    line-height: 150px;
+    font-size: 150px;
+    line-height: 160px;
   }
 }
 
