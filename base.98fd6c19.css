@@ -350,7 +350,7 @@ a:focus {
     }
 
     .menu__item-textinner.is-hdr-styled::before, .menu__item-textinner.is-hdr-styled::before {
-        -webkit-text-stroke: 1.5px #0d0d0d;
+        -webkit-text-stroke: 1.5px #0b0b0b;
     }
 }
 
