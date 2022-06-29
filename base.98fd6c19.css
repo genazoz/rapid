@@ -349,8 +349,8 @@ a:focus {
         transition: top .6s cubic-bezier(0.85, 0.01, 0.2, 0.99);
     }
 
-    .menu__item-textinner.is-hdr-styled::before, .menu__item-textinner.is-hdr-styled::before {
-        -webkit-text-stroke: 1.5px #0b0b0b;
+    .menu__item-textinner::before, .menu__item-textinner.is-hdr-styled::before {
+        -webkit-text-stroke: 1.5px #0d0d0d;
     }
 }
 
@@ -362,7 +362,7 @@ a:focus {
         font-size: 160px;
         line-height: 180px;
     }
-    .menu__item-textinner.is-hdr-styled::before, .menu__item-textinner.is-hdr-styled::before {
+    .menu__item-textinner::before, .menu__item-textinner.is-hdr-styled::before {
         -webkit-text-stroke: 1.5px #0e0e0e;
     }
 }
