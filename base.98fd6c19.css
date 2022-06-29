@@ -294,10 +294,10 @@ a:focus {
     height: 100%;
 
     text-align: center;
-    -webkit-text-stroke: 1.5px #0b0b0b;
+    -webkit-text-stroke: 1.5px #0c0c0c;
     -webkit-text-fill-color: transparent;
 
-    transition: .15s top ease;
+    transition: .15s top ease, .15s -webkit-text-stroke;
   }
 @media (max-width: 1200px) {
   .menu__item-text {
