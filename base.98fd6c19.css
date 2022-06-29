@@ -860,8 +860,6 @@ footer p.email {
   margin-top: -640px;
   margin-right: -40px;
   background-image: url('white-ball1.f7b80ac3.png');
-
-  display: none;
 }
 .lights__ball--orange {
   position: absolute;
@@ -870,7 +868,6 @@ footer p.email {
   width: 1706px;
   height: 1439px;
   background-image: url('orange-ball.eb9038d9.png');
-  display: none;
 }
 
 
@@ -895,10 +892,8 @@ footer p.email {
   background-size: 3%;
   background-repeat: repeat;
   pointer-events: none;
-  opacity: .3;
+  opacity: .35;
   animation: noise 1.2s steps(3) infinite both;
-
-  display: none;
 }
 
 @media (max-width: 1200px) {
