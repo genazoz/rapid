@@ -9052,14 +9052,14 @@ exports.getMousePos = getMousePos;
 module.exports = "1.44a4508f.webp";
 },{}],"rP0N":[function(require,module,exports) {
 module.exports = "2.d4e16c22.webp";
-},{}],"RNr0":[function(require,module,exports) {
-module.exports = "3.3ce49033.webp";
 },{}],"nXBI":[function(require,module,exports) {
 module.exports = "5.7f47fec2.webp";
-},{}],"n3x5":[function(require,module,exports) {
-module.exports = "6.320f4967.webp";
 },{}],"tUg6":[function(require,module,exports) {
 module.exports = "4.136de4c4.webp";
+},{}],"RNr0":[function(require,module,exports) {
+module.exports = "3.3ce49033.webp";
+},{}],"n3x5":[function(require,module,exports) {
+module.exports = "6.320f4967.webp";
 },{}],"CNbU":[function(require,module,exports) {
 module.exports = "7.9cc971a2.webp";
 },{}],"BZ8X":[function(require,module,exports) {
@@ -9075,7 +9075,7 @@ module.exports = {
   "7": require("./7.webp"),
   "8": require("./8.webp")
 };
-},{"./1.webp":"W5nN","./2.webp":"rP0N","./3.webp":"RNr0","./5.webp":"nXBI","./6.webp":"n3x5","./4.webp":"tUg6","./7.webp":"CNbU","./8.webp":"BZ8X"}],"Jy3L":[function(require,module,exports) {
+},{"./1.webp":"W5nN","./2.webp":"rP0N","./5.webp":"nXBI","./4.webp":"tUg6","./3.webp":"RNr0","./6.webp":"n3x5","./7.webp":"CNbU","./8.webp":"BZ8X"}],"Jy3L":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9482,7 +9482,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // menu (<nav> element)
 var main = document.querySelector('main'),
-    body = document.querySelector('body'); // preload the images set as data attrs in the menu items
+    body = document.querySelector('body');
+
+if (window.matchMedia('(color-gamut: p3)').matches) {
+  document.querySelectorAll('.menu__item-textinner').forEach(function (el) {
+    return el.classList.add('is-hdr-styled');
+  });
+} // preload the images set as data attrs in the menu items
+
 
 (0, _preloader.preloader)('.menu__item').then(function () {
   // initialize the smooth scroll
@@ -9495,16 +9502,8 @@ var main = document.querySelector('main'),
   // initialize menu
 
   new _menu.default(main);
-  player.currentTime = 11;
-  player.volume = .07;
   document.querySelector('.toggle-mode input').addEventListener('change', function () {
     body.classList.toggle('light-mode');
-
-    if (!player.paused && !body.classList.contains('light-mode')) {
-      player.pause();
-    } else if (body.classList.contains('light-mode')) {
-      player.play();
-    }
   });
 });
 },{"./preloader":"BeZ8","locomotive-scroll":"ez7q","./menu":"i0CD"}]},{},["QvaY"], null)
